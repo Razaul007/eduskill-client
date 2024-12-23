@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const AddTutorial = () => {
   const { user } = useAuth();  
+  console.log(user)
   const navigate = useNavigate();
 
   const [tutorial, setTutorial] = useState({
@@ -40,14 +43,23 @@ const AddTutorial = () => {
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Here, you'd send the form data to your backend API
     console.log('Tutorial added:', tutorial);
+    try{
+     const res = await axios.post('http://localhost:4000/tutorials', tutorial)
+      toast.success("Data added Successfully!")
+      console.log(res)
+      
+    }catch(error){
+         console.log(error)
+    }
+    
 
-    // After submission, navigate to the dashboard
-    navigate('/my-tutorials');
+   
+    // navigate('/my-tutorials');
   };
 
   return (

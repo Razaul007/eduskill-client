@@ -26,7 +26,7 @@ const Register = () => {
        
         CreateUser(data.email, data.password)
         .then(() => {
-                axios.post("http://localhost:5173/users", userData).then(res => {
+                axios.post("http://localhost:4000/users", userData).then(res => {
                     console.log(res)
                     if (res.data.insertedId) {
                         Swal.fire({

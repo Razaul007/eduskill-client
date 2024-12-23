@@ -8,6 +8,7 @@ import AddTutorial from "../pages/AddTutorial";
 import MyTutorials from "../pages/MyTutorials";
 import FindTutorials from "../pages/FindTutorials";
 import MyBookedTutors from "../pages/MyBookedTutors";
+import ViewDetails from "../components/ViewDetails";
 
 
 
@@ -39,16 +40,17 @@ export const router = createBrowserRouter([
         element:<FindTutorials/>,
        },
        {
-         path:"/my-booked-tutors",
-         element:<MyBookedTutors/>
+         path:"/tutor/:id",
+         element:<ViewDetails/>,
+        
        },
-        // {
-        //     path:"/products/:id",
-        //     element: <PrivateRoute>
-        //         <ProductDetails/>
-        //     </PrivateRoute>,
-        //     loader: ({ params }) => fetch(`http://localhost:4000/products/${params.id}`),
-              
+      
+       {
+         path:"/my-booked-tutors",
+         element:<MyBookedTutors/>,
+    
+       },
+        
 
 
         // },
