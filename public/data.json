@@ -1,0 +1,123 @@
+[
+    {
+      "image": "image1.jpg",
+      "language": "English",
+      "price": "$30",
+      "description": "English is a global language widely used for international communication, business, and travel."
+    },
+    {
+      "image": "image2.jpg",
+      "language": "Spanish",
+      "price": "$25",
+      "description": "Spanish is a Romance language spoken by millions around the world, particularly in Latin America and Spain."
+    },
+    {
+      "image": "image3.jpg",
+      "language": "French",
+      "price": "$40",
+      "description": "French is spoken across many continents, with a rich history in culture, philosophy, and diplomacy."
+    },
+    {
+      "image": "image4.jpg",
+      "language": "German",
+      "price": "$45",
+      "description": "German is the most widely spoken language in Europe and is important for business and engineering fields."
+    },
+    {
+      "image": "image5.jpg",
+      "language": "Chinese",
+      "price": "$50",
+      "description": "Chinese, particularly Mandarin, is one of the most spoken languages globally and vital for business in China."
+    },
+    {
+      "image": "image6.jpg",
+      "language": "Japanese",
+      "price": "$55",
+      "description": "Japanese is the language of Japan, with unique writing systems and a rich cultural heritage."
+    },
+    {
+      "image": "image7.jpg",
+      "language": "Russian",
+      "price": "$35",
+      "description": "Russian is an East Slavic language spoken in Russia and many other countries in Eastern Europe and Central Asia."
+    },
+    {
+      "image": "image8.jpg",
+      "language": "Arabic",
+      "price": "$50",
+      "description": "Arabic is a central Semitic language spoken across the Middle East and North Africa."
+    },
+    {
+      "image": "image9.jpg",
+      "language": "Portuguese",
+      "price": "$40",
+      "description": "Portuguese is spoken in Portugal, Brazil, and several African countries, with a growing number of speakers worldwide."
+    },
+    {
+      "image": "image10.jpg",
+      "language": "Italian",
+      "price": "$30",
+      "description": "Italian is the language of Italy, known for its influence on art, music, and food."
+    },
+    {
+      "image": "image11.jpg",
+      "language": "Korean",
+      "price": "$45",
+      "description": "Korean is the language of South Korea and North Korea, with a unique script and rich cultural history."
+    },
+    {
+      "image": "image12.jpg",
+      "language": "Dutch",
+      "price": "$35",
+      "description": "Dutch is spoken in the Netherlands, Belgium, and Suriname, and is closely related to German and English."
+    },
+    {
+      "image": "image13.jpg",
+      "language": "Hindi",
+      "price": "$25",
+      "description": "Hindi is one of the official languages of India and is spoken by millions across the Indian subcontinent."
+    },
+    {
+      "image": "image14.jpg",
+      "language": "Turkish",
+      "price": "$40",
+      "description": "Turkish is spoken in Turkey and Cyprus, and is an important language for business in the region."
+    },
+    {
+      "image": "image15.jpg",
+      "language": "Swedish",
+      "price": "$45",
+      "description": "Swedish is the official language of Sweden and Finland, and it’s known for its high quality of life."
+    },
+    {
+      "image": "image16.jpg",
+      "language": "Greek",
+      "price": "$35",
+      "description": "Greek has a rich history, being the language of ancient philosophers and the basis for many English words."
+    },
+    {
+      "image": "image17.jpg",
+      "language": "Polish",
+      "price": "$40",
+      "description": "Polish is the official language of Poland, known for its complex grammar and rich cultural heritage."
+    },
+    {
+      "image": "image18.jpg",
+      "language": "Romanian",
+      "price": "$30",
+      "description": "Romanian is a Romance language spoken in Romania and Moldova, with Latin roots and unique linguistic features."
+    },
+    {
+      "image": "image19.jpg",
+      "language": "Danish",
+      "price": "$40",
+      "description": "Danish is spoken in Denmark and is known for its simplicity in sentence structure and pronunciation."
+    },
+    {
+      "image": "image20.jpg",
+      "language": "Finnish",
+      "price": "$50",
+      "description": "Finnish is known for its complex grammar and is spoken by millions in Finland."
+    }
+  ]
+  

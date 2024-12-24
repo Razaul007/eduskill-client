@@ -52,6 +52,7 @@ const AddTutorial = () => {
      const res = await axios.post('http://localhost:4000/tutorials', tutorial)
       toast.success("Data added Successfully!")
       console.log(res)
+      navigate("/my-tutorials")
       
     }catch(error){
          console.log(error)

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const FindTutorials = () => {
   const [tutors, setTutors] = useState([]);
 
-  // Fetch tutors data when the component mounts
+ 
   useEffect(() => {
     axios.get("http://localhost:4000/tutorials")
       .then((response) => {
