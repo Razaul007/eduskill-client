@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import axios from "axios";
 import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 
 const MyTutorials = () => {
     const {user} = useAuth();
@@ -14,29 +15,7 @@ const MyTutorials = () => {
     const navigate = useNavigate();
     console.log(selectedTutorial)
 
-    // Fetch tutorials added by the user
-    // useEffect(() => {
-    //     const fetchTutorials = async () => {
-    //         try {
-    //             const response = await fetch(`http://localhost:4000/my-tutorials/${user?.email}`, {
-    //                 headers: {
-    //                     Authorization: `Bearer ${localStorage.getItem("token")}`, // Assuming you're using JWT for authentication
-    //                 },
-    //             });
-
-    //             if (!response.ok) {
-    //                 throw new Error("Failed to fetch tutorials");
-    //             }
-
-    //             const data = await response.json();
-    //             setTutorials(data);
-    //         } catch (error) {
-    //             console.error("Error fetching tutorials:", error);
-    //         }
-    //     };
-
-    //     fetchTutorials();
-    // }, []);
+    console.log(tutorials)
 
      useEffect(() => {
             
@@ -68,6 +47,7 @@ const MyTutorials = () => {
             }
            
         );
+        console.log(response)
 
             if (!response.ok) {
                 throw new Error("Failed to delete tutorial");
@@ -104,39 +84,38 @@ const MyTutorials = () => {
             price: event.target.price.value,
             description: event.target.description.value,
         };
-    
+         
+          try {
+            const { data } = await axios.put(`http://localhost:4000/update/${selectedTutorial._id}`, formData);
+            console.log("Response Data:", data);
         
-    
-            // Send update request to the server
-            const response = await fetch(
-                `http://localhost:4000/tutorials/${selectedTutorial._id}`,
-                {
-                    method: "PUT",
-                    headers: {
-                        "Content-Type": "application/json",
-                        
-                    },
-                    body: JSON.stringify(formData),
-                }
-            
-            );
-
-            console.log(response);
-    
-            if (!response.ok) {
-                throw new Error("Failed to update tutorial");
+            if (data.modifiedCount>0) {
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Equipment Updated Successfully!",
+                    showConfirmButton: false,
+                    timer: 2500,
+                });
+                navigate('/my-tutorials'); 
+            } else {
+                Swal.fire({
+                    icon: "error",
+                    title: "No Changes",
+                    text: "No updates were made to the equipment.",
+                });
             }
-    
-            const updatedTutorial = await response.json();
-    
-            // Update the tutorials state
-            setTutorials((prevTutorials) =>
-                prevTutorials.map((t) =>
-                    t._id === updatedTutorial._id ? updatedTutorial : t
-                )
-            );
-    
-            // Close the modal and clear the selection
+        } catch (error) {
+            console.error("Error updating equipment:", error);
+            Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "Failed to update the equipment. Please try again.",
+            });
+        }
+        
+
+         
             setShowModal(false);
             setSelectedTutorial(null);
        
@@ -173,16 +152,16 @@ const MyTutorials = () => {
                             <td className="border border-gray-300 px-4 py-2">${tutorial.price}</td>
                             <td className="border border-gray-300 px-4 py-2">{tutorial.description}</td>
                             <td className="border border-gray-300 px-4 py-2">{tutorial.review}</td>
-                            <td className="border border-gray-300 px-4 py-2">
+                            <td className="border border-gray-300 flex flex-col gap-2 ">
                                 <button
                                     onClick={() => handleUpdate(tutorial)}
-                                    className="bg-blue-500 text-white px-4 py-2 rounded mr-2"
+                                    className="bg-blue-500 text-white btn-sm  px-4 py-2 rounded mr-2"
                                 >
                                     Update
                                 </button>
                                 <button
                                     onClick={() => handleDelete(tutorial._id)}
-                                    className="bg-red-500 text-white px-4 py-2 rounded"
+                                    className="bg-red-500 text-white px-4 py-2 btn-sm rounded mr-2"
                                 >
                                     Delete
                                 </button>

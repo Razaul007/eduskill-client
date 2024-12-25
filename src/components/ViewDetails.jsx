@@ -4,20 +4,19 @@ import axios from "axios";
 import useAuth from "../hooks/useAuth";
 import { useEffect, useState } from "react";
 import Loading from "../pages/Loading";
- // Assuming this is the hook to get the user
+ 
 
 const ViewDetails = () => {
     const navigate = useNavigate();
-  const { id } = useParams(); // Get the tutor id from the URL
+  const { id } = useParams(); 
   const [tutor, setTutor] = useState(null);
-  const [isBooked, setIsBooked] = useState(false); // Track booking status
+  const [isBooked, setIsBooked] = useState(false); 
 
-  const { user } = useAuth();  // Getting the user from the useAuth hook
+  const { user } = useAuth(); 
 
   useEffect(() => {
-    // Fetch tutor details
-    axios
-      .get(`http://localhost:4000/tutor/${id}`)
+   
+    axios.get(`http://localhost:4000/tutor/${id}`)
       .then((response) => {
         setTutor(response.data);
         
@@ -27,21 +26,19 @@ const ViewDetails = () => {
       });
   }, [id]);
 
-  // Handle booking
+
   const handleBooking = () => {
     if (user) {
-      // Post the booking details to the backend
-      axios
-        .post("http://localhost:4000/book-tutor", {
+      axios.post("http://localhost:4000/book-tutor", {
           tutorId: tutor._id,
           image: tutor.image,
           language: tutor.language,
           price: tutor.price,
           tutorEmail: tutor.email,
-          email: user.email, // Assuming user object has an email
+          email: user.email, 
         })
         .then(() => {
-          setIsBooked(true); // Mark as booked
+          setIsBooked(true); 
           alert("Booking successful!");
           navigate('/my-booked-tutors')
         })

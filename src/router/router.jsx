@@ -9,6 +9,7 @@ import MyTutorials from "../pages/MyTutorials";
 import FindTutorials from "../pages/FindTutorials";
 import MyBookedTutors from "../pages/MyBookedTutors";
 import ViewDetails from "../components/ViewDetails";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -29,11 +30,11 @@ export const router = createBrowserRouter([
         },
        {
         path:"/add-tutorial",
-        element:<AddTutorial/>
+        element:<PrivateRoute><AddTutorial/></PrivateRoute>
        },
        {
         path:"/my-tutorials",
-        element: <MyTutorials/>
+        element: <PrivateRoute><MyTutorials/></PrivateRoute>
        },
        {
         path:"/find-tutorials",
@@ -41,29 +42,15 @@ export const router = createBrowserRouter([
        },
        {
          path:"/tutor/:id",
-         element:<ViewDetails/>,
+         element:<PrivateRoute><ViewDetails/></PrivateRoute>,
         
        },
       
        {
          path:"/my-booked-tutors",
-         element:<MyBookedTutors/>,
+         element:<PrivateRoute><MyBookedTutors/></PrivateRoute>,
     
        },
-        
-
-
-        // },
-        // {
-        //     path:"/add-product",
-        //     element:<AddEquipment/>
-        // },
-        // {
-        //     path:"/my-equipment",
-        //     element:<PrivateRoute><MyEquipmentList/></PrivateRoute>,
-           
-
-        // },
         {
             path:"/login",
             element:<Login/>
@@ -72,41 +59,7 @@ export const router = createBrowserRouter([
             path:"/register",
             element:<Register/>
         },
-        // {
-        //     path:"/update/:id",
-        //     element:<UpdateEquipment/>,
-        //     loader: ({ params }) => fetch(`http://localhost:4000/products/${params.id}`),
-        // }
        
       ],
     },
-    // {
-    //     path:"/dashboard",
-    //     element:(
-    //     <PrivateRoute>
-    //         <DashboardLayout/>
-    //     </PrivateRoute>
-    //     ),
-    //     children:[
-    //         {
-    //           path:"/dashboard/overview",
-    //           element: <Overview/>
-    //        },
-    //     //    seller routes
-    //         {
-    //           path:"/dashboard/my-products",
-    //           element: 
-    //           (<SellerRoute>
-    //             <MyProducts/>
-    //           </SellerRoute>)
-    //        },
-    //         {
-    //           path:"/dashboard/overview",
-    //           element: 
-    //           (<SellerRoute>
-    //             <AddProducts/>
-    //           </SellerRoute>)
-    //        },
-    // ],
-    // },
   ]);

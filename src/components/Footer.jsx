@@ -1,21 +1,19 @@
 import React from "react";
-// grid grid-cols-1 md:grid-cols-3
+
 const Footer = () => {
   return (
     <footer className="bg-gray-800 text-gray-200 py-10">
       <div className="max-w-[1280px] mx-auto flex flex-col-1 md:flex-col-3 justify-between items-center gap-8">
-        {/* Brand and About Section */}
         <div className="ml-5">
           <h1 className="text-2xl text-center font-bold text-white mb-4">EduSkills</h1>
           <p className="text-sm w-full text-wrap text-center">
-            EduSkills is your gateway to learning and  <br/> 
-            skill development.Connect with expert tutors  <br/> 
-             and achieve your educational goals seamlessly.
+            EduSkills is your gateway to learning and  <br />
+            skill development.Connect with expert tutors  <br />
+            and achieve your educational goals seamlessly.
           </p>
 
         </div>
 
-        {/* Quick Links */}
         <div>
           <h2 className="text-xl font-semibold text-white mb-4">Quick Links</h2>
           <ul>
@@ -42,7 +40,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Contact and Social Media */}
         <div>
           <h2 className="text-xl font-semibold text-white mb-4">Contact Us</h2>
           <p>Email: support@eduskills.com</p>
@@ -84,7 +81,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Copyright Section */}
       <div className="text-center text-gray-500 mt-8 border-t border-gray-700 pt-4">
         © {new Date().getFullYear()} EduSkills. All Rights Reserved.
       </div>

@@ -19,9 +19,7 @@ const AddTutorial = () => {
     review: 0, // Default review is 0
   });
 
-  
 
-  // Languages Offered - you can replace this with a more complete list if needed
   const languagesOffered = [
     'English', 'Spanish', 'French', 'German', 'Chinese', 'Japanese', 'Russian',
     'Arabic', 'Portuguese', 'Italian', 'Korean', 'Dutch', 'Hindi', 'Turkish',
@@ -45,9 +43,7 @@ const AddTutorial = () => {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Here, you'd send the form data to your backend API
-    console.log('Tutorial added:', tutorial);
+    // console.log('Tutorial added:', tutorial);
     try{
      const res = await axios.post('http://localhost:4000/tutorials', tutorial)
       toast.success("Data added Successfully!")
@@ -60,7 +56,7 @@ const AddTutorial = () => {
     
 
    
-    // navigate('/my-tutorials');
+    navigate('/my-tutorials');
   };
 
   return (
@@ -76,7 +72,7 @@ const AddTutorial = () => {
             onChange={handleChange}
             className="w-full p-2 border rounded"
             placeholder="Your Name"
-            readOnly // Prevent editing name
+            readOnly 
           />
         </div>
 
@@ -89,7 +85,7 @@ const AddTutorial = () => {
             onChange={handleChange}
             className="w-full p-2 border rounded"
             placeholder="Your Email"
-            readOnly // Prevent editing email
+            readOnly 
           />
         </div>
 
@@ -154,7 +150,7 @@ const AddTutorial = () => {
             onChange={handleChange}
             className="w-full p-2 border rounded"
             placeholder="Review (0 by default)"
-            disabled // Review field is read-only by default
+            disabled 
           />
         </div>
 
