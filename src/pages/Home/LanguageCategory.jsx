@@ -10,7 +10,7 @@ const LanguageCategory = () => {
   useEffect(() => {
     const fetchTutorials = async () => {
       try {
-        const response = await fetch("http://localhost:4000/tutorials");
+        const response = await fetch("https://eduskills-server.vercel.app/tutorials");
         if (!response.ok) {
           throw new Error("Failed to fetch tutorials");
         }

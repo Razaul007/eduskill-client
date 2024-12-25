@@ -11,7 +11,7 @@ const FeaturedTutors = () => {
     useEffect(() => {
         const fetchTutorials = async () => {
             try {
-                const response = await fetch("http://localhost:4000/tutorials");
+                const response = await fetch("https://eduskills-server.vercel.app/tutorials");
                 console.log(response)
                 if (!response.ok) {
                     throw new Error("Failed to fetch products");

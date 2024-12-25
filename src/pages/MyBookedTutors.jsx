@@ -19,7 +19,7 @@ const MyBookedTutors = () => {
 
     const fetchAllBooked = async () => {
         try {
-            const { data } = await axios.get(`http://localhost:4000/booked-tutors/${user?.email}`, {withCredentials:true});
+            const { data } = await axios.get(`https://eduskills-server.vercel.app/booked-tutors/${user?.email}`, {withCredentials:true});
             setBooked(data);
         } catch (error) {
             console.error("Error fetching booked tutors:", error);
@@ -28,7 +28,7 @@ const MyBookedTutors = () => {
 
     const handleReview = async (tutorId) => {
         try {
-            await axios.put(`http://localhost:4000/increment-review/${tutorId}`);
+            await axios.put(`https://eduskills-server.vercel.app/increment-review/${tutorId}`);
             alert("Review count increased!");
             fetchAllBooked(); // Refresh the booked tutors list
         } catch (error) {
