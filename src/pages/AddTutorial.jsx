@@ -45,7 +45,7 @@ const AddTutorial = () => {
     e.preventDefault();
     // console.log('Tutorial added:', tutorial);
     try{
-     const res = await axios.post('https://eduskills-server.vercel.app/tutorials', tutorial)
+     const res = await axios.post('http://localhost:4000/tutorials', tutorial)
       toast.success("Data added Successfully!")
       console.log(res)
       navigate("/my-tutorials")

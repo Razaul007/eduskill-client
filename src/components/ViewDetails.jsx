@@ -16,7 +16,7 @@ const ViewDetails = () => {
 
   useEffect(() => {
    
-    axios.get(`https://eduskills-server.vercel.app/tutor/${id}`)
+    axios.get(`http://localhost:4000/tutor/${id}`)
       .then((response) => {
         setTutor(response.data);
         
@@ -29,7 +29,7 @@ const ViewDetails = () => {
 
   const handleBooking = () => {
     if (user) {
-      axios.post("https://eduskills-server.vercel.app/book-tutor", {
+      axios.post("http://localhost:4000/book-tutor", {
           tutorId: tutor._id,
           image: tutor.image,
           language: tutor.language,

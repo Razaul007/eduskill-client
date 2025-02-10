@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-gray-200 py-10">
+    <footer className="bg-cyan-900 text-gray-200 py-10">
       <div className="max-w-[1280px] mx-auto flex flex-col-1 md:flex-col-3 justify-between items-center gap-8">
         <div className="ml-5">
           <h1 className="text-2xl text-center font-bold text-white mb-4">EduSkills</h1>
@@ -23,12 +23,12 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="/find-tutors" className="hover:underline">
+              <a href="/find-tutorials" className="hover:underline">
                 Find Tutors
               </a>
             </li>
             <li>
-              <a href="/add-tutorials" className="hover:underline">
+              <a href="/add-tutorial" className="hover:underline">
                 Add Tutorials
               </a>
             </li>

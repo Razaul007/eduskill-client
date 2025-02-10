@@ -119,10 +119,10 @@ const Navbar = () => {
                 
                 {!user && (
                     <>
-                        <Link className="mr-2 lg:mr-4 btn bg-cyan-500 text-xl lg:text-2xl" to="/login">
+                        <Link className="mr-2 lg:mr-4 btn bg-cyan-800 text-xl text-white lg:text-2xl" to="/login">
                             Login
                         </Link>
-                        <Link className="lg:mr-4 btn bg-cyan-500 text-xl lg:text-2xl" to="/register">
+                        <Link className="lg:mr-4 btn bg-cyan-800 text-xl text-white lg:text-2xl" to="/register">
                             Register
                         </Link>
                     </>

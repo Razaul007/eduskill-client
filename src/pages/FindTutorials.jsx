@@ -10,7 +10,7 @@ const FindTutorials = () => {
  
   const fetchTutors = async (query = "") => {
     try {
-      const response = await axios.get("https://eduskills-server.vercel.app/tutorials", {
+      const response = await axios.get("http://localhost:4000/tutorials", {
         params: { language: query }, 
       });
       setTutors(response.data);

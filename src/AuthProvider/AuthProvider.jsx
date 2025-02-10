@@ -40,7 +40,7 @@ const AuthProvider = ({ children }) => {
             console.log(currentUser);
             if (currentUser) {
                 const user = currentUser.email;
-                axios.post(`https://eduskills-server.vercel.app/authentication`, user, {
+                axios.post(`http://localhost:4000/authentication`, user, {
                     withCredentials:true
                 })
                     .then(data => {

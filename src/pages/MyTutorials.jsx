@@ -27,7 +27,7 @@ const MyTutorials = () => {
 
         const fetchMyTutorials = async () => {
             try {
-                const { data } = await axios.get(`https://eduskills-server.vercel.app/my-tutorials/${user?.email}`);
+                const { data } = await axios.get(`http://localhost:4000/my-tutorials/${user?.email}`);
                console.log(data)
                 setTutorials(data);
             } catch (error) {
@@ -39,7 +39,7 @@ const MyTutorials = () => {
     // Delete tutorial
     const handleDelete = async (id) => {
         try {
-            const response = await fetch(`https://eduskills-server.vercel.app/tutorials/${id}`, {
+            const response = await fetch(`http://localhost:4000/tutorials/${id}`, {
                 method: "DELETE",
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -86,7 +86,7 @@ const MyTutorials = () => {
         };
          
           try {
-            const { data } = await axios.put(`https://eduskills-server.vercel.app/update/${selectedTutorial._id}`, formData);
+            const { data } = await axios.put(`http://localhost:4000/update/${selectedTutorial._id}`, formData);
             console.log("Response Data:", data);
         
             if (data.modifiedCount>0) {
