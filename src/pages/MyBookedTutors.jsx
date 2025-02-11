@@ -28,11 +28,11 @@ const MyBookedTutors = () => {
 
     const handleReview = async (tutorId) => {
         try {
-            console.log("Tutor ID from Frontend:", tutorId); // Log the tutorId
+            console.log("Tutor ID from Frontend:", tutorId); 
             const response = await axios.put(`http://localhost:4000/increment-review/${tutorId}`);
             console.log("API Response:", response.data);
             alert("Review count increased!");
-            fetchAllBooked(); // Refresh the booked tutors list
+            fetchAllBooked();
         } catch (error) {
             console.error("Error incrementing review count:", error.response?.data || error.message);
             alert("Failed to increase review count. Please try again.");
