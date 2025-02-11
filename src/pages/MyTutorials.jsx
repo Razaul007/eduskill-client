@@ -54,12 +54,14 @@ const MyTutorials = () => {
         try {
             const { data } = await axios.put(`http://localhost:4000/update/${selectedTutorial._id}`, formData);
             if (data.modifiedCount > 0) {
+               
                 Swal.fire({
                     icon: "success",
                     title: "Tutorial Updated Successfully!",
                     showConfirmButton: false,
                     timer: 2500,
                 });
+                fetchMyTutorials();
                 navigate('/my-tutorials');
             }
         } catch (error) {

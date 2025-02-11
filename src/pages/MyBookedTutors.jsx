@@ -19,7 +19,7 @@ const MyBookedTutors = () => {
 
     const fetchAllBooked = async () => {
         try {
-            const { data } = await axios.get(`http://localhost:4000/booked-tutors/${user?.email}`, {withCredentials:true});
+            const { data } = await axios.get(`http://localhost:4000/booked-tutors/${user?.email}`, { withCredentials: true });
             setBooked(data);
         } catch (error) {
             console.error("Error fetching booked tutors:", error);
@@ -28,14 +28,18 @@ const MyBookedTutors = () => {
 
     const handleReview = async (tutorId) => {
         try {
-            await axios.put(`http://localhost:4000/increment-review/${tutorId}`);
+            console.log("Tutor ID from Frontend:", tutorId); // Log the tutorId
+            const response = await axios.put(`http://localhost:4000/increment-review/${tutorId}`);
+            console.log("API Response:", response.data);
             alert("Review count increased!");
             fetchAllBooked(); // Refresh the booked tutors list
         } catch (error) {
-            console.error("Error incrementing review count:", error);
+            console.error("Error incrementing review count:", error.response?.data || error.message);
             alert("Failed to increase review count. Please try again.");
         }
     };
+
+
 
     return (
         <div className="max-w-6xl mx-auto p-8">
@@ -54,7 +58,7 @@ const MyBookedTutors = () => {
                             <p className="text-green-500 font-bold my-2">${item.price}</p>
                             <p className="text-blue-500">Reviews: {item.review || 0}</p>
                             <button
-                                className="btn btn-primary mt-4"
+                                className="btn bg-cyan-800 mt-4 text-white font-bold"
                                 onClick={() => handleReview(item.tutorId)}
                             >
                                 Review
