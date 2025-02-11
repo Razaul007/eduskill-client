@@ -60,8 +60,8 @@ const AddTutorial = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto mt-5 p-6">
-      <h1 className="text-3xl text-center font-bold mt-5 mb-6">Add a New Tutorial</h1>
+    <div className="max-w-lg mx-auto p-4 md:p-6">
+      <h1 className="text-2xl md:text-3xl text-center font-bold mb-6">Add a New Tutorial</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="block text-sm font-medium mb-1">Name</label>
@@ -155,7 +155,7 @@ const AddTutorial = () => {
         </div>
 
         <div className="flex justify-center">
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn text-white font-bold bg-cyan-700">
             Submit
           </button>
         </div>
