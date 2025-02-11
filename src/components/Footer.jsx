@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="bg-cyan-900 text-gray-200 py-10">
-      <div className="max-w-[1280px] mx-auto flex flex-col-1 md:flex-col-3 justify-between items-center gap-8">
+      <div className="max-w-[1280px] mx-auto md:flex flex-col-1 md:flex-col-2 justify-between items-center gap-8">
         <div className="ml-5">
           <h1 className="text-2xl text-center font-bold text-white mb-4">EduSkills</h1>
           <p className="text-sm w-full text-wrap text-center">
@@ -11,11 +11,11 @@ const Footer = () => {
             skill development.Connect with expert tutors  <br />
             and achieve your educational goals seamlessly.
           </p>
-
+ 
         </div>
 
-        <div>
-          <h2 className="text-xl font-semibold text-white mb-4">Quick Links</h2>
+        <div className="text-center mt-3">
+          <h2 className="text-xl font-semibold text-white md:mb-4">Quick Links</h2>
           <ul>
             <li>
               <a href="/" className="hover:underline">
@@ -40,8 +40,8 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div>
-          <h2 className="text-xl font-semibold text-white mb-4">Contact Us</h2>
+        <div className="text-center mt-3">
+          <h2 className="text-xl font-semibold text-white md:mb-4">Contact Us</h2>
           <p>Email: support@eduskills.com</p>
           <p>Phone: +123-456-7890</p>
           <div className="flex gap-4 mt-4">
@@ -81,7 +81,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="text-center text-gray-500 mt-8 border-t border-gray-700 pt-4">
+      <div className="text-center text-gray-200 mt-8 border-t border-gray-700 pt-4">
         © {new Date().getFullYear()} EduSkills. All Rights Reserved.
       </div>
     </footer>
